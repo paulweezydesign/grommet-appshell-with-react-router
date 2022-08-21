@@ -10,6 +10,11 @@ import {
 } from 'grommet';
 import { FormClose } from 'grommet-icons';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import Home from '/src/routes/home';
+import About from '/src/routes/about';
+import Contact from '/src/routes/contact';
+import Kittens from '/src/routes/kittens';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const theme = {
   global: {
@@ -53,6 +58,7 @@ class App extends Component {
                 <Heading level="2" margin="none">
                   My Cute Kittens
                 </Heading>
+
                 <Button
                   icon={<GiHamburgerMenu />}
                   onClick={() =>
@@ -74,7 +80,12 @@ class App extends Component {
                       align="center"
                       justify="center"
                     >
-                      sidebar
+                      <Box>
+                        <Link to="/">Home</Link>
+                        <Link to="/about">About</Link>
+                        <Link to="/kittens">Kittens</Link>
+                        <Link to="/contact">Contact</Link>
+                      </Box>
                     </Box>
                   </Collapsible>
                 ) : (
